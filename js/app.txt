@@ -16,5 +16,4 @@ for each data-captions in anchor tags
             display none
         endif
     endif
-endfor
 
