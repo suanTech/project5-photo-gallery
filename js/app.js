@@ -24,11 +24,13 @@ function searchFilter() {
         if(caption) {
             matchingWord = caption || input;
             if (matchingWord.toUpperCase().indexOf(filter) > -1) {
-                image[i].style.display = "";
-                image[i].style.opacity = 1;
-                image[i].style.transition = "all .5s ease";
+                anchor[i].style.display = "";
+                anchor[i].style.opacity = "1"
+                anchor[i].style.transition = "opacity .5s ease";
             } else {
-                image[i].style.opacity = 0;
+                anchor[i].style.opacity = "0";
+
+
             }
         }
     }
