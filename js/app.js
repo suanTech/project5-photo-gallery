@@ -4,38 +4,20 @@ baguetteBox.run('.gallery');
 
 
 // Search filter starts here
-const anchor = document.getElementsByTagName('a'); // to retrieve data attribute for caption
 const search = searchFilter();
 
-
 function searchFilter() {
-    // set variables 
-    let caption, filter, input, image;
-
-    // retrieve elements/values from html
-    input = document.getElementById('search'); // search input by user
-    filter = input.value.toUpperCase();
-    image = document.getElementsByTagName('img'); // to change display value
-
-
-    // check if the input matches data-caption
+  let input = document.getElementById('search').value;
+  input = input.toUpperCase();
+  let image = document.querySelectorAll('a');
     for (let i = 0; i < image.length; i++) {
-        caption =  anchor[i].getAttribute('data-caption');
-        if(caption) {
-            matchingWord = caption || input;
-            if (matchingWord.toUpperCase().indexOf(filter) > -1) {
-                anchor[i].style.display = "";
-                anchor[i].style.opacity = "1"
-                anchor[i].style.transition = "opacity .5s ease";
-            } else {
-                anchor[i].style.opacity = "0";
-
-
-            }
-        }
-    }
+      if (!image[i].getAttribute('data-caption').toUpperCase().includes(input)) {
+				// image[i].style.display = "none";
+				image[i].style.opacity = "0";
+      } else {
+				image[i].style.display = "flex";
+				image[i].style.opacity = "1";
+				image[i].style.transition = "all .5s ease";
+			}
+  	}
 }
-    
-/* 
-/  function was created referring to https://www.w3schools.com/howto/howto_js_filter_table.asp
-*/
