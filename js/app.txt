@@ -1,0 +1,20 @@
+get anchor element
+
+get input from search box
+set to variable named input
+convert input value to uppercase
+set to variable named filter
+
+for each data-captions in anchor tags 
+    get strings from data-caption attributes
+    set to variable named caption
+    if caption is true
+        check matchingWord with caption or input
+        if matchingWord's index is larger than -1
+            display image
+        else
+            display none
+        endif
+    endif
+endfor
+
