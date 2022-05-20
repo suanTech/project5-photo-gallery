@@ -12,12 +12,11 @@ function searchFilter() {
   let image = document.querySelectorAll('a');
     for (let i = 0; i < image.length; i++) {
       if (!image[i].getAttribute('data-caption').toUpperCase().includes(input)) {
-				// image[i].style.display = "none";
-				image[i].style.opacity = "0";
+				image[i].style.display = "none";
       } else {
-				image[i].style.display = "flex";
-				image[i].style.opacity = "1";
-				image[i].style.transition = "all .5s ease";
+				image[i].style.display = "block";
+				image[i].style.animation = "fadeIn .3s ease-in-out";
+				
 			}
   	}
 }
